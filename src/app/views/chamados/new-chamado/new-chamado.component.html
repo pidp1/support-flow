@@ -1,0 +1,53 @@
+<app-nav-bar>
+        <form [formGroup]="formNovoChamado" class="form-container">
+            <mat-toolbar color="primary" class="title-button">
+                <h1>Novo Chamado</h1>
+                <button mat-raised-button (click)="openDialog('parametro')">Legenda</button>
+            </mat-toolbar>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label for="enumListarProduto">Selecione o produto</mat-label>
+                <mat-select formControlName="produto" id="enumListarProduto">
+                    <mat-option *ngFor="let produto of enumListarProdutos | keyvalue" [value]="produto.value">{{produto.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label for="enumPrioridade">Prioridade</mat-label>
+                <mat-select formControlName="prioridade" id="enumPrioridade">
+                    <mat-option *ngFor="let prioridade of enumPrioridade | keyvalue" [value]="prioridade.value" [ngClass]="{'green': prioridade.value == 'N1', 'yellow': prioridade.value == 'N2', 'red': prioridade.value == 'N3'}"><b> {{prioridade.value}} </b></mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label for="enumClassificacao">Classificação</mat-label>
+                <mat-select formControlName="classificacao" id="enumClassificacao">
+                    <mat-option *ngFor="let classificacao of enumClassificacao | keyvalue" [value]="classificacao.value">{{classificacao.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Assunto</mat-label>
+                <input type="text" maxlength="30" matInput formControlName="assunto">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Detalhamento</mat-label>
+                <textarea rows="8" type="text" maxlength="2000" matInput placeholder="Descreva o problema..." formControlName="descricao"></textarea>
+            </mat-form-field>
+            <div id="double-width">
+                <mat-progress-bar *ngIf="isLoadUpload" mode="indeterminate"></mat-progress-bar>
+                <input type="file" class="arquivo" name="anexos" input type="file" class="arquivo" (change)="uploadPhoto($event)">
+                <ul *ngFor="let anexo of anexos; index as i">
+                    <li><a href="{{anexo}}" target="_blank">Ver arquivo</a><button mat-icon-button (click)="delete(i)">
+                            <i class="material-icons">delete</i>
+                        </button></li>
+                </ul>
+            </div>
+            <div class="double-width">
+                <button type="submit" mat-raised-button color="primary" (click)="criarChamado();this.isLoadUpload=true" class="botao" [disabled]="isLoadUpload">Cadastrar</button>
+                <a type="button" mat-raised-button color="warn" routerLink="/home" class="botao">Cancelar</a>
+            </div>
+        </form>
+</app-nav-bar>
+

@@ -1,0 +1,54 @@
+<div class="title-button">
+    <h2 mat-dialog-title>Detalhes do chamado</h2>
+    <button mat-icon-button mat-dialog-close>
+        <i class="material-icons">close</i>
+    </button>
+</div>
+
+<mat-dialog-content class="mat-typography">
+<div class="detalheContainer">
+<div class="columndiv">
+    <h3><strong>Identificação do chamado</strong></h3>
+    <p>{{chamado.idChamado}}</p>
+
+    <h3><strong>Prioridade:</strong></h3>
+    <p>{{chamado.prioridade}}</p>
+
+    <h3><strong>Classificação:</strong></h3>
+    <p>{{chamado.classificacao}}</p>
+
+    <h3><strong>Assunto:</strong></h3>
+    <p>{{chamado.assunto}}</p>
+</div>
+<div class="columndiv2">
+    <h3><strong>Chamado aberto por:</strong></h3>
+    <p>{{chamado.usuario?.displayName}}</p>
+
+    
+    <h3><strong>Status/Situação:</strong></h3>
+    <p>{{chamado.status }}</p>
+
+
+    
+    <h3><strong>Produto:</strong></h3>
+    <p>{{chamado.produto}}</p>
+</div>
+</div>    
+
+    <h3><strong>Descrição:</strong></h3>
+    <p>{{chamado.descricao}}</p>
+
+    
+    
+
+    <h3><strong>Anexos:</strong></h3>
+    
+    <div *ngIf="chamado.anexos?.length != 0; else semAnexo">
+        <ul *ngFor="let anexo of chamado.anexos" >
+            <li><a href="{{anexo}}" target="_blank">Ver arquivo</a></li>
+        </ul>  
+    </div>
+    <ng-template #semAnexo >
+        Nenhum arquivo disponível
+    </ng-template>
+</mat-dialog-content>

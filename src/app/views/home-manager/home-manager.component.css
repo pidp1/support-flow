@@ -1,0 +1,159 @@
+table {
+  width: 100%;
+  
+}
+
+.mat-toolbar {
+  width: 100%;
+  margin: 0.5rem 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: #627a9b;
+}
+
+h2 {
+  text-align: flex;
+  color: rgb(255, 255, 255);
+  margin: center;
+  width: 100%;
+}
+
+mat-card {
+  max-width: 100%;
+  margin: 2em auto;
+  text-align: center;
+  background-color: transparent;
+  box-sizing: content-box;
+}
+
+.min-width {
+  width: 100%;
+  min-width: 150px;
+}
+
+.container-spinner {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #0f637a;
+}
+
+th, td{
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+mat-form-field{
+  width: 95%;
+
+}
+.material-icons {
+  width: 45px;
+}
+
+.red{
+  background-color: rgb(255, 149, 138);
+    color: rgb(29, 29, 31);
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 15px 3px 0;
+    border-radius: 15px;
+    width: 50px;
+}
+
+.green{
+  background-color: rgb(145, 247, 131);
+    color: rgb(29, 29, 31);
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 15px 3px 0;
+    border-radius: 15px;
+    width: 50px;
+}
+
+.yellow{
+  background-color: rgb(240, 247, 131);
+    color: rgb(29, 29, 31);
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 15px 3px 0;
+    border-radius: 15px;
+    width: 50px;
+}
+
+.td-icon {
+  display: flex;
+}
+
+.alinhar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.overflow {
+overflow: auto;
+
+}
+
+.mat-row,
+.mat-header-row {
+  min-width: 800px;
+}
+
+.mat-cell,
+.mat-header-cell {
+  word-wrap: initial;
+  display: table-cell;
+  padding: 0px 10px;
+  line-break: unset;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.mat-row,
+.mat-header-row {
+  display: table-row;
+}
+
+.colIndex{
+display: none;
+}
+
+.mat-column-status{
+width: 5%;
+}
+
+.mat-column-prioridade{
+width: 1%;
+}
+
+.mat-column-assign{
+width: 100%;
+
+}
+
+.mat-column-chamado{
+width: 10%;
+}
+
+.mat-column-dataAbertura{
+width: 2%;
+}
+
+.mat-column-dataAbertura{
+width: 2%;
+}
+
+

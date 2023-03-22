@@ -1,0 +1,54 @@
+<button mat-icon-button mat-dialog-close>
+  <i class="material-icons">close</i>
+</button>
+<div class="container">
+
+  <mat-card class="boxGraph">
+     <mat-card-header>
+         <mat-card-title>
+          CLASSIFICAÇÃO
+        </mat-card-title>
+     </mat-card-header>
+
+     <mat-card-content>
+       <google-chart [data]="classificacaoChart"></google-chart>
+     </mat-card-content>
+    </mat-card>
+
+    <mat-card class="boxGraph">
+      <mat-card-header>
+        <mat-card-title>
+          PRODUTOS
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <google-chart [data]="produtoChart"></google-chart>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="boxGraph">
+      <mat-card-header>
+        <mat-card-title>
+          PRIORIDADE
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <google-chart [data]="prioridadeChart"></google-chart>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="boxGraph">
+      <mat-card-header>
+        <mat-card-title>
+          STATUS
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <google-chart [data]="statusChart"></google-chart>
+      </mat-card-content>
+    </mat-card>
+
+</div>

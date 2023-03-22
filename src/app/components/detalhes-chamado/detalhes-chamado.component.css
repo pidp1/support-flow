@@ -1,0 +1,42 @@
+.title-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    max-width: 500px;
+}
+
+h2{
+    font-size: 27px;
+    padding: 2px;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: #6b6a6a;
+    font-weight: bold;
+}
+
+a:hover{
+    cursor: pointer;
+    color: #343434;
+}
+
+.columndiv{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+}
+.columndiv2{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 40%;
+    justify-content: space-between;
+}
+.detalheContainer{
+    display: flex;
+}

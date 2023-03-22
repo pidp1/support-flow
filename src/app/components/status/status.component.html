@@ -1,0 +1,22 @@
+<div class="title-button">
+    <h2 mat-dialog-title>Deseja mudar a situação do chamado?.</h2>
+    <button mat-icon-button mat-dialog-close>
+        <i class="material-icons">close</i>
+    </button>
+</div>
+
+<mat-dialog-content>
+    <form class="form-container" [formGroup]="formStatus">
+        <mat-form-field id="status" appearance="fill" class="full-width">
+            <mat-label >status</mat-label>
+            <mat-select formControlName="status" [(ngModel)]="status">
+                <mat-option *ngFor="let status of enumStatus | keyvalue" [value]="status.value">{{status.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="botoes" >
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="statusChange(chamado)">CONFIRMAR</button>
+                    <button mat-raised-button color="warn" mat-dialog-close>CANCELAR</button>
+            </div>
+    </form>
+
+</mat-dialog-content>

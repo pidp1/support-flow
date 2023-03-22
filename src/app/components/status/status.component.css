@@ -1,0 +1,35 @@
+.modal{
+
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+  
+  .title-button{
+      display: flex;
+      justify-content: space-between;
+  } 
+  
+  .mat-dialog-content, .botoes{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .botoes {
+    display: flex;
+    justify-content: space-around;    
+  }
+
+  .form-container {
+    width: 50%;
+  }
+
+  #status {
+    width: 100%;
+  }

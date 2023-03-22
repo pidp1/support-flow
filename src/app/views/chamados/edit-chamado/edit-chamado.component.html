@@ -1,0 +1,47 @@
+
+<app-nav-bar>
+    <div class="container">       
+        <form #formEdit ="ngForm" class="form-container">
+            <h1>Editar Chamado</h1>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label for="enumListarProduto">Selecione o produto</mat-label> 
+                <mat-select id="enumListarProduto" name="produto" [(ngModel)] = "chamado.produto" required >
+                <mat-option *ngFor="let produto of enumListarProdutos | keyvalue" [value]="produto.value">{{produto.value}}</mat-option>  
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label for="enumPrioridade">Prioridade</mat-label>
+                <mat-select id="enumPrioridade" name="prioridade" [(ngModel)] = "chamado.prioridade" required>
+                    <mat-option *ngFor="let prioridade of enumPrioridade | keyvalue" [value]="prioridade.value">{{prioridade.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label for="enumClassificacao">Classificação</mat-label>
+                <mat-select id="enumClassificacao" name="classificacao" [(ngModel)] = "chamado.classificacao" required>
+                    <mat-option *ngFor="let classificacao of enumClassificacao | keyvalue" [value]="classificacao.value">{{classificacao.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Assunto</mat-label>
+                <input matInput name="assunto" [(ngModel)] = "chamado.assunto" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput placeholder="Descreva o problema..." name="descricao" [(ngModel)] = "chamado.descricao" required></textarea>
+            </mat-form-field>
+                <div>
+                    <mat-progress-bar *ngIf="isLoadUpload" mode="indeterminate"></mat-progress-bar>
+                    <input type="file" class="arquivo" name="anexos" input type="file" class="arquivo" (change)="uploadArquivo($event)">
+                    <ul *ngFor="let anexo of anexos; index as i">
+                        <li><a href="{{anexo}}" target="_blank">Ver arquivo</a><button mat-icon-button (click)="delete(i)">
+                            <i class="material-icons">delete</i>
+                        </button></li>
+                    </ul>
+                </div>
+            <div class="double-width">
+                <button type="submit" mat-raised-button color="primary" (click)="update(formEdit)" class="botao" [disabled]="isLoadUpload">Editar</button>
+                <a type="button" mat-raised-button color="warn" routerLink="/home" class="botao">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</app-nav-bar>

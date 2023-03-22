@@ -1,0 +1,23 @@
+<div class="title-button">
+    <h2 mat-dialog-title>Selecionar um responsável para esse chamado.</h2>
+    <button mat-icon-button mat-dialog-close>
+        <i class="material-icons">close</i>
+    </button>
+</div>
+
+<mat-dialog-content>
+    <form class="form-container" [formGroup]="formResponsavel">
+        <mat-form-field id="status" appearance="fill" class="full-width">
+            <mat-label >Responsavel</mat-label>
+            <mat-select formControlName="responsavel" [(ngModel)]="responsavel">
+                <mat-option *ngFor="let responsavel of devs"
+                    [value]="responsavel">{{responsavel.displayName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="botoes" >
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="assinalar()">CONFIRMAR</button>
+                    <button mat-raised-button color="warn" mat-dialog-close>CANCELAR</button>
+            </div>
+    </form>
+
+</mat-dialog-content>

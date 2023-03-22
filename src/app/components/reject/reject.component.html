@@ -1,0 +1,23 @@
+<div class="title-button">
+    <h2 mat-dialog-title>Deseja Rejeitar esse chamado?</h2>
+    <button mat-icon-button mat-dialog-close>
+        <i class="material-icons">close</i>
+    </button>
+</div>
+<div class="full-width">
+<p><strong>Antes de encerrar justifique o motivo abaixo:</strong></p>
+<div>
+<form *ngIf="justification" class="form-container" [formGroup]="formNovaMensagem">
+    <mat-form-field  id="mensagem" appearance="outline" class="full-width">
+        <mat-label>Mensagem</mat-label>
+        <input   matInput formControlName="mensagem">
+    </mat-form-field>
+    <button   class="enviar" type="submit" mat-raised-button color="primary"(click)="enviarMensagem()"><mat-icon>send</mat-icon></button>
+</form>
+</div>
+</div>
+<mat-dialog-content>
+    <button [disabled]="justification" mat-raised-button color="primary" mat-dialog-close (click)="rejectTicket(chamado)">SIM</button>
+    <button mat-raised-button color="warn" mat-dialog-close>NÃO</button>
+
+</mat-dialog-content>

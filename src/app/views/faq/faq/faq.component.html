@@ -1,0 +1,192 @@
+<app-nav-bar>
+  <div class="container">
+    <h1>FAQ - Perguntas Frequentes</h1>
+    <div class="container_main">
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title 
+              >Como criar um novo chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            Clique em "Adicionar novo chamado" e preencha os campos necessários. 
+            Caso necessite enviar alguma imagem ou arquivo, clique em "escolher arquivo"
+            e após carregar o arquivo desejado, clique em "Cadastrar".
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >O que é prioridade de chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            É o tipo de urgência de solução do seu chamado.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >Como definir qual é a prioridade mais adequada para o meu
+              chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            No botão de legenda que aparece na página (ao criar um novo chamado), 
+            você encontra os tipos de prioridade existentes e pode escolher a mais
+            adequada para o seu chamado.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >O que é classificação de chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            A classificação de chamado define o tipo do seu chamado. Exemplo: se o
+            chamado é para reportar um defeito de uma página do site/sistema,
+            então a classificação do chamado mais apropriada será a de "BUG".
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >Como definir qual é a classificação mais adequada para o meu
+              chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+           Para ver qual a classificação mais apropriada para o seu chamado, 
+           clique no botão de legenda que aparece na página (ao criar um novo chamado).
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >Posso enviar mais de um arquivo ao criar um novo chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            Sim, é possível enviar mais de um arquivo. Basta carregar um por vez.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title>O que é interação do chamado?</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Na interação do chamado você pode enviar mensagens ao responsável por atendê-lo
+            e também é possível enviar novos anexos, se necessário.        
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >Não consigo editar o meu chamado. Por quê?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            Editar o seu chamado é possível somente se a situação do mesmo estiver em "aberto".
+            Caso não esteja mais conseguindo editá-lo, provavelmente a situação do chamado já tenha 
+            sido alterada, ou seja, o chamado já está em tratamento.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>     
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title
+              >Qual o prazo de resposta para o meu chamado?</mat-panel-title
+            >
+          </mat-expansion-panel-header>
+          <p>
+            Não há um prazo determinado, é preciso aguardar. Caso achar necessário,
+            você também pode enviar mensagens através do campo de interação. 
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title>Quem pode encerrar o meu chamado?</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            O responsável pelo tratamento do seu chamado trocará a situação do mesmo 
+            para "Finalizado" e então você também poderá finalizá-lo. Caso contrário, em 7 dias o
+            chamado será finalizado automaticamente.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header class="question">
+            <mat-panel-title>O que fazer em caso de chamado rejeitado?</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            No histórico de interação do chamado referente você pode encontrar a resposta com a justificativa
+            de rejeição. Se achar necessário, pode criar um novo chamado.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</app-nav-bar>

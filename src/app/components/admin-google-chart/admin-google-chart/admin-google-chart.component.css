@@ -1,0 +1,20 @@
+.container {
+  display: contents;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+
+}
+
+.boxGraph{
+  width: 95%;
+  height: 55%;
+  margin: 8px;
+}
+
+button{
+  left: 95%;
+}

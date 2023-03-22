@@ -1,0 +1,112 @@
+<app-nav-bar>
+
+  <mat-card>
+    <div class="actions">
+      <a  class="button" type="button" mat-raised-button routerLink="/chamados/new">
+        <i class="material-icons">add</i>Adicionar novo Chamado</a>
+    </div>
+    <mat-toolbar>
+      <h2>TODOS OS CHAMADOS</h2>
+      <button mat-raised-button (click)="openDialog('parametro')">Legenda</button>
+    </mat-toolbar>
+
+    <i class="material-icons">search</i>
+      <mat-form-field>
+        <mat-label>Buscar chamado</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Assunto, Prioridade, Situação...">
+      </mat-form-field>
+
+      <div class="overflow">
+
+      <table style="overflow-x: hidden;"  mat-table matSort  matSortActive="sortIndex" matSortDirection="asc" matSortDisableClear [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="chamado">
+      <th mat-header-cell *matHeaderCellDef> N° </th>
+      <td mat-cell *matCellDef="let standard"> {{ standard.idSimples }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="usuario">
+      <th mat-header-cell *matHeaderCellDef> Usuário </th>
+      <td mat-cell *matCellDef="let standard"> {{ standard.usuario.displayName }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="assunto">
+      <th mat-header-cell *matHeaderCellDef> Assunto </th>
+      <td mat-cell *matCellDef="let standard"> {{ standard.assunto }} </td>
+    </ng-container>
+
+    <ng-container  matColumnDef="sortIndex">
+      <th mat-header-cell *matHeaderCellDef class="colIndex" mat-sort-header> index </th>
+      <td mat-cell *matCellDef="let standard" class="colIndex"> {{ standard.sortIndex }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prioridade">
+      <th mat-header-cell *matHeaderCellDef> Prioridade </th>
+      <td mat-cell *matCellDef="let standard" >
+      <div class="td-icon" [ngClass]="{'green': standard.prioridade == 'N1', 'yellow': standard.prioridade == 'N2', 'red': standard.
+      prioridade == 'N3'}">
+      <mat-icon>error_outline</mat-icon> {{ standard.prioridade }}
+      </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="assign" *ngIf="getCredentials()">
+      <th mat-header-cell *matHeaderCellDef> Responsável </th>
+      <td mat-cell *matCellDef="let chamado">
+        <button  mat-raised-button color="primary" (click)="responsavelDialog(chamado)"
+          *ngIf="!isResponsavelNull(chamado)" [matTooltip]="'Clique aqui para aceitar o chamado '">
+          Iniciar
+        </button> {{ chamado.responsavel?.displayName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="assign" *ngIf="!getCredentials()">
+      <th mat-header-cell *matHeaderCellDef> Responsável </th>
+      <td mat-cell *matCellDef="let chamado">
+        <button  mat-raised-button color="primary" (click)="managerDialog(chamado)"
+          *ngIf="!isResponsavelNull(chamado)" [matTooltip]="'Clique aqui para aceitar o chamado '">
+          Iniciar
+        </button> {{ chamado.responsavel?.displayName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="classificacao">
+      <th mat-header-cell *matHeaderCellDef> Classificação </th>
+      <td mat-cell *matCellDef="let standard"> {{ standard.classificacao }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataAbertura">
+        <th mat-header-cell *matHeaderCellDef> Data de Abertura </th>
+        <td mat-cell *matCellDef="let standard"> {{ standard.dataAbertura.toDate() | date:"dd/MM/yy" }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Situação </th>
+      <td mat-cell *matCellDef="let standard"> {{ standard.status }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="detalhes">
+      <th mat-header-cell *matHeaderCellDef> Detalhes </th>
+      <td mat-cell *matCellDef="let chamado">
+          <button mat-icon-button (click)="openDetails(chamado)">
+              <i class="material-icons">more_horiz</i>
+          </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+</div> 
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page">
+  </mat-paginator>
+
+  <div></div><!--  *ngIf="dataSource != 0 else spinner" paginação não funciona com o spinner-->
+  <ng-template #semChamados>
+    <div><p>Ainda não há Chamados cadastrados!</p></div>
+  </ng-template>
+  </mat-card>
+</app-nav-bar>

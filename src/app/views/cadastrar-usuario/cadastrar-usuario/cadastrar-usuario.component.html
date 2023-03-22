@@ -1,0 +1,50 @@
+<app-nav-bar>
+    <form [formGroup]="formUser" class="form-container">
+
+      <mat-toolbar color="primary" class="title-button"><h1>Novos Usuários</h1></mat-toolbar>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Digite seu nome" formControlName="displayName" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="Digite seu email" formControlName="email" type="email">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Digite sua senha" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input matInput placeholder="Digite o telefone(somente números)" formControlName="telefone" type="tel">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="Digite o CPF (somente números)" formControlName="cpf" type="text">
+
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Selecione o nível de acesso</mat-label>
+        <mat-select formControlName="accessLevel">
+          <mat-option value="USER">Usuário</mat-option>
+          <mat-option value="DEV">Desenvolvedor</mat-option>
+          <mat-option value="MANAGER">Gerente</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-progress-bar *ngIf="isLoadUpload" mode="indeterminate"></mat-progress-bar>
+        <input type="file" class="arquivo" (change)="uploadPhoto($event)">
+    </div>
+      
+
+      <div class="double-width">
+        <button type="submit" mat-raised-button color="primary" (click)="submit();this.isLoadUpload=true" class="botao" [disabled]="isLoadUpload">Cadastrar</button>
+        <a type="button" mat-raised-button color="warn" routerLink="/usuarios" class="botao">Cancelar</a>
+      </div>
+
+    </form>
+</app-nav-bar>

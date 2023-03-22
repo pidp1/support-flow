@@ -1,0 +1,30 @@
+<div class="title-button">
+    <h2 mat-dialog-title>Histórico do chamado {{chamado.idSimples}}</h2>
+    <button mat-icon-button mat-dialog-close>
+        <i class="material-icons">close</i>
+    </button>
+</div>
+
+<mat-dialog-content class="mat-typography">
+
+    <div>
+        <h3><strong>Assunto do chamado: </strong> {{chamado.assunto}}</h3>
+    </div>
+    <div>
+        <mat-card class="example-card relative" *ngFor="let card of chamado.historico let i = index ">
+        <div class="card-header">
+            <img [src]="chamado.historico[i].usuario?.photoURL || '../../../assets/user.png' " class="img-testimony" alt="">
+            <div class="information">
+                <mat-card-title>{{chamado.historico[i].usuario?.displayName}}</mat-card-title>
+            <mat-card-subtitle>{{verificaDate(chamado.historico[i].data)  | date:"dd/MM/yy HH:mm:ss"}}</mat-card-subtitle>
+            </div>
+        </div>
+        <mat-card-content>
+            <p>Chamado atualizado: {{chamado.historico[i].mensagem}}</p>
+            <ul *ngFor="let arquivo of chamado.historico[i].mudancas">
+                <li>{{arquivo}}</li>
+            </ul>
+        </mat-card-content>
+        </mat-card>
+    </div>
+</mat-dialog-content>
