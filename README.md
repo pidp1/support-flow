@@ -1,27 +1,36 @@
-# ChamadosSoulcode
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
-## Development server
+![logo SupportFlow](src\assets\logo-supflow2.png "logo")
+Esse projeto foi desenvolvido como avaliação final do bootcamp da [Soulcode Academy](https://soulcode.com/). 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O projeto foi executado por um grupo de 11 desenvolvedores.
 
-## Code scaffolding
+A aplicação foi desenvolvida para atender as demandas reais de um cliente (descaracterizado aqui nesse repositório sob a marca genérica de "support flow") que precisava resolver as dificuldades na comunicação de bugs e demandas técnicas para a equipe de desenvolvimento, além de organizar a prioridade dessas demandas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
+## Tecnologias 
 
-## Build
+Para desenvolver o projeto utilizamos uma stack de tecnologias compatíveis com o que o cliente já tinha em produção.
+  
+   ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+   - Como framework de desenvolvimento front-end. Foram utilizados amplamente recursos do Angular Material também.
+  
+  ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+  - Como nosso *back end as a service (BAAS)*
+  
+  ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+  - Usado para fazer testagem E2E
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Principais Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- 3 níveis de acesso para usuários do sistema (Gerente, Desenvolvedor e Usuário padrão)
+- Forma simples de criar novos tickets 
+- Priozação de tarefas usando data de criação do ticket e nível de urgência
+- Painel personalizado para os níveis de acesso
+- Light/Dark mode
+- Painel gerencial personalizável completo com todos os indicadores do sistema. 
+- Exportação de relatórios gerenciais para apresentação a stakeholders 
+- Login e BAAS utilizando Firebase
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
