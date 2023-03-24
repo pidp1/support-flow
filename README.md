@@ -2,6 +2,7 @@
 
 # Support Flow
 
+Esse projeto foi desenvolvido como avaliação final do bootcamp da [Soulcode Academy](https://soulcode.com/)
 O projeto foi executado por um grupo de 11 desenvolvedores.
 
 A aplicação foi desenvolvida para atender as demandas reais de um cliente (descaracterizado aqui nesse repositório sob a marca genérica de "support flow") que precisava resolver as dificuldades na comunicação de bugs e demandas técnicas para a equipe de desenvolvimento, além de organizar a prioridade dessas demandas.
