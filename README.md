@@ -1,7 +1,6 @@
 
 
-![logo SupportFlow](src\assets\logo-supflow2.png "logo")
-Esse projeto foi desenvolvido como avaliação final do bootcamp da [Soulcode Academy](https://soulcode.com/)
+# Support Flow
 
 O projeto foi executado por um grupo de 11 desenvolvedores.
 
